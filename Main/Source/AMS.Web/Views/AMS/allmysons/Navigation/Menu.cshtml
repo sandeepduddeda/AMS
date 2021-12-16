@@ -79,10 +79,10 @@
 </nav>
 @if (Sitecore.Context.Item.TemplateName.ToString() == AMS.Web.Core.TemplateNames.BRANCH_TEMPLATE_NAME)
 {
-    var weekdaycontent = "Monday-Thursday " + Sitecore.Context.Item.Fields["Start Time for WeekDay"].Value.ToString() + "AM -" + Sitecore.Context.Item.Fields["End Time for WeekDay"].Value.ToString() + "PM " + Sitecore.Context.Item.Fields["TimeZone"].Value.ToString();
-    var fridaycontent = "Friday " + Sitecore.Context.Item.Fields["Start Time for Friday"].Value.ToString() + "AM -" + Sitecore.Context.Item.Fields["End Time for Friday"].Value.ToString() + "PM " + Sitecore.Context.Item.Fields["TimeZone"].Value.ToString();
-    var saturdaycontent = "Saturday " + Sitecore.Context.Item.Fields["Start Time for Saturday"].Value.ToString() + "AM -" + Sitecore.Context.Item.Fields["End Time for Saturday"].Value.ToString() + "PM " + Sitecore.Context.Item.Fields["TimeZone"].Value.ToString();
-    var sundaycontent = "Sunday " + Sitecore.Context.Item.Fields["Start Time for Sunday"].Value.ToString() + "AM -" + Sitecore.Context.Item.Fields["End Time for Sunday"].Value.ToString() + "PM " + Sitecore.Context.Item.Fields["TimeZone"].Value.ToString();
+    var weekdaycontent = "Monday-Thursday " + Sitecore.Context.Item.Fields["Start Time for WeekDay"].Value.ToString() + "AM - " +Sitecore.Context.Item.Fields["End Time for WeekDay"].Value.ToString() + "PM " + Sitecore.Context.Item.Fields["TimeZone"].Value.ToString();
+    var fridaycontent = "Friday " + Sitecore.Context.Item.Fields["Start Time for Friday"].Value.ToString() + "AM - " + Sitecore.Context.Item.Fields["End Time for Friday"].Value.ToString() + "PM " + Sitecore.Context.Item.Fields["TimeZone"].Value.ToString();
+    var saturdaycontent = "Saturday " + Sitecore.Context.Item.Fields["Start Time for Saturday"].Value.ToString() + "AM - " + Sitecore.Context.Item.Fields["End Time for Saturday"].Value.ToString() + "PM " + Sitecore.Context.Item.Fields["TimeZone"].Value.ToString();
+    var sundaycontent = "Sunday " + Sitecore.Context.Item.Fields["Start Time for Sunday"].Value.ToString() + "AM - " + Sitecore.Context.Item.Fields["End Time for Sunday"].Value.ToString() + "PM " + Sitecore.Context.Item.Fields["TimeZone"].Value.ToString();
 <div itemprop="OpeningHoursSpecification" itemscope itemtype="http://schema.org/OpeningHoursSpecification" style="display:none">
 
     <meta itemprop="openingHours" content=@weekdaycontent />
