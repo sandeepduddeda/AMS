@@ -1,0 +1,68 @@
+﻿@using XBlogHelper.Models.Blog
+@using XBlogHelper.Search
+@using XBlogHelper.General
+@using Sitecore.Data.Items
+@using Sitecore.Mvc
+@using Sitecore.Links
+@using XBlogHelper
+@using System.Web
+@inherits System.Web.Mvc.WebViewPage
+
+@{
+
+    Item dataSourceItem = Sitecore.Context.Database.GetItem(Sitecore.Mvc.Presentation.RenderingContext.Current.Rendering.DataSource);
+    BlogPost blogPost = Sitecore.Context.Item.CreateAs<BlogPost>();
+    BlogSettings settingsItem = XBlogHelper.General.DataManager.GetBlogSettingsItem(dataSourceItem != null ? dataSourceItem : Sitecore.Context.Item);
+
+    UrlOptions option = new UrlOptions();
+    option.AlwaysIncludeServerUrl = true;
+    string currentUrl = HttpUtility.UrlEncode(LinkManager.GetItemUrl(blogPost.InnerItem, option));
+    string title = HttpUtility.UrlEncode(blogPost.Title);
+}
+
+<div id='@Html.Raw(settingsItem.PrimaryCSSID)'>
+    <div itemprop="headline">
+        <h1>@Html.Sitecore().Field(BlogPost.BlogPostTitleFieldId, blogPost.InnerItem)</h1>
+    </div>
+
+    <div class="halfLeft">
+        <div class="set" itemprop="datePublished">
+            Published on
+            @Html.Raw(blogPost.PublishDate.DateTime.ToString(settingsItem.BlogPostDateFormat))
+        </div>
+        <div class="set" itemprop="author">
+            by
+            @if (blogPost.Authors.Any())
+            {
+                List<Sitecore.Data.ID> authorIds = new List<Sitecore.Data.ID>();
+                foreach (Author a in blogPost.Authors)
+                {
+                    authorIds.Add(a.ItemId);
+                }
+
+                List<Author> authors = AuthorManager.GetAuthorsForBlogPost(authorIds);
+
+                string authorNames = string.Empty;
+
+                foreach (Author a in authors)
+                {
+                    authorNames += a.FullName;
+                }
+
+                @Html.Raw(authors[0].FullName);
+            }
+        </div>
+    </div>
+
+
+    <br class="clear" />
+    <div itemprop="articleBody">
+        @Html.Sitecore().Field(BlogPost.BlogPostBodyFieldId, blogPost.InnerItem)
+    </div>
+    <div itemprop="articleSection">
+        @Html.Raw("<strong>Categories:</strong> " + CategoryManager.GetCommaSeperatedCategoryList(blogPost))
+    </div>
+    <div itemprop="articleSection">
+        @Html.Raw("<strong>Tags:</strong> " + TagManager.GetCommaSeperatedTagList(blogPost));
+    </div>
+</div>

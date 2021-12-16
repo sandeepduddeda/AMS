@@ -1,0 +1,43 @@
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Mvc
+@using Sitecore
+@using AMS.Web.Core
+
+@model RenderingModel
+@{
+    var termsAndConditions = Sitecore.Context.Database.GetItem(Items.TermsAndConditions);
+    var privacyPolicy = Sitecore.Context.Database.GetItem(Items.PrivacyPolicy);
+    var quoteForm = Sitecore.Context.Database.GetItem(ItemPaths.PATH_QUOTE_FORM);
+    Sitecore.Diagnostics.Log.Info("new form quote ID" + Sitecore.Context.Item.ID.ToString(), this);
+    if (Sitecore.Context.Item.ID.ToString() == "{31B7B060-98EE-4950-B975-F89824390D72}")
+    {
+        quoteForm = Sitecore.Context.Database.GetItem(ItemPaths.PATH_QUOTE_FORM_FOR_NewForm);
+        Sitecore.Diagnostics.Log.Info("new form quote", this);
+    }
+    if (Sitecore.Context.Item.ID.ToString() == "{57C0BC25-3437-47CB-9EA9-FB6B607E07CC}")
+    {
+        quoteForm = Sitecore.Context.Database.GetItem("/sitecore/content/AMS/allmysons/System/NewGetQuoteForm/Get a Quote Form for mobile1");
+        Sitecore.Diagnostics.Log.Info("new form quote mobile1", this);
+    }
+    if (Sitecore.Context.Item.ID.ToString() == "{F12A5F09-EA3B-4DCB-8F20-5495E51C2E09}")
+    {
+        quoteForm = Sitecore.Context.Database.GetItem("/sitecore/content/AMS/allmysons/System/NewGetQuoteForm/Get a Quote Form for mobile2");
+        Sitecore.Diagnostics.Log.Info("new form quote mobile2", this);
+    }
+}
+
+@using (Html.BeginRouteForm(Sitecore.Mvc.Configuration.MvcSettings.SitecoreRouteName, FormMethod.Post, new { @class = "steps-main", action = "" }))
+{
+    @Html.Sitecore().FormHandler("Content", "RequestQuote")
+    @Html.Hidden("PPCBranchRef", Sitecore.Web.WebUtil.GetQueryString(AMS.Web.Core.PPC.BranchReferenceQueryStringParameter))
+    @Html.Hidden("PPCBranchSrc", Sitecore.Web.WebUtil.GetQueryString(AMS.Web.Core.PPC.BranchSourceQueryStringParameter))
+
+    if (TempData.ContainsKey("Error"))
+    {
+        <div class="error">@TempData["Error"]</div>
+    }
+
+    @Html.Raw(Html.Sitecore().Field(FieldNames.FIELD_NAME_CONTENT, quoteForm))
+
+}
+}

@@ -1,0 +1,19 @@
+﻿@using AMS.Web.Extensions
+@using Sitecore.Data.Items
+
+@model AMS.Web.Models.BannerModel
+
+@if (Sitecore.Context.PageMode.IsPageEditorEditing || !string.IsNullOrEmpty(Model.ImageUrl))
+{
+    <!--/ Half Banner -->
+
+    <div class="intro-parallax full-height banner-slider-item banner-inner-intro banner-cs">
+        <div class="full-cover bg-image" data-stellar-ratio="0.6" data-stellar-vertical-offset="90" @Html.Raw(string.Format("style=\"background-image:url('{0}')\"", Model.ImageUrl)) title="@Model.ImageAlt"></div>
+        <div class="intro-caption" data-stellar-ratio="0.6">
+            <h2 class="wow fadeInUpBig" data-wow-duration="1.4s" data-wow-delay="0s">@Model.Title</h2>
+            <p class="wow fadeInUpBig" data-wow-duration="1.6s" data-wow-delay="0s">@Model.Subtitle</p>
+        </div>
+    </div>
+    
+    <!-- Half Banner /-->
+}

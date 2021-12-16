@@ -1,0 +1,17 @@
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Mvc
+
+@model IEnumerable<AMS.Web.Models.BlogArchive>
+
+@if (Model != null)
+{
+    <div class="blog-archives">
+        <h3>Archives</h3>
+        <ul>
+            @foreach (var archive in Model)
+            {
+                <li><a href="@archive.Url">@archive.Title</a></li>
+            }
+        </ul>
+    </div>
+}

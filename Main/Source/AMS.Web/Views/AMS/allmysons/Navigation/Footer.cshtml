@@ -1,0 +1,30 @@
+﻿@model AMS.Web.Models.FooterModel
+
+<footer>
+    <!-- top -->
+    @Model.Top
+
+    @if (Model.LinkItems != null && Model.LinkItems.Any())
+    {
+        <!-- links -->
+        <div class="footer-useful-links clearfix">
+            @foreach (var linkItem in Model.LinkItems)
+            {
+                @Html.Sitecore().Field("Link", linkItem, new { DisableWebEdit = true })
+            }
+        </div>
+    }
+    @if (Model.Address != null)
+    {
+        <div class="footer-address" style="color: white;">
+            <div>@Model.Address.CorporateName.ToHtmlString()</div>
+            <div>@Model.Address.AdditionalInfo.ToHtmlString()</div>
+            @if (Model.Address.IsTxDMV)
+            {<br /><div>TxDMV's Toll-Free Customer Help Line @Model.Address.TollFreeNumber</div>}
+        </div><br />
+    }
+    <!-- copyright -->
+    <div class="footer-copyrighs">
+        @Model.Copyright
+    </div>
+</footer>

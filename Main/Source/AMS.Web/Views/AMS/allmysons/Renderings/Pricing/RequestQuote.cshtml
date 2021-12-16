@@ -1,0 +1,24 @@
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Mvc
+
+@model RenderingModel
+
+<!--/ Pricing -->
+<div class="pricing-main clearfix">
+    <div class="pricings-form-tab clearfix">
+        <ul>
+            <li><a class="active">Move Type</a></li>
+            <li><a>Move Size</a></li>
+            <li><a>Move Location</a></li>
+            <li><a>Move Date</a></li>
+@*
+    <li><a>Contact Info</a></li>
+*@
+            <li><a>Confirm &amp; Book</a></li>
+        </ul>
+    </div>
+
+    @Html.Partial("~/Views/AMS/allmysons/Renderings/Pricing/RequestQuoteForm.cshtml")
+
+</div>
+<!-- Pricing /-->

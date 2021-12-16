@@ -1,0 +1,94 @@
+﻿@using AMS.Web.Extensions
+@model AMS.Web.Models.MenuModel
+
+<nav class="clearfix">
+    <div class="nav-in">
+        @*
+            <a href="/ams_quote.aspx" class="book-now">Book Now</a>
+        *@
+        <h2>Menu</h2>
+        <form action="" method="post">
+            <div class="nav-search clearfix">
+                <input type="search" required>
+                <input type="submit" value="">
+            </div>
+        </form>
+        <ul>
+            @foreach (var item in Model.Items)
+            {
+                <li>
+                    <a href="@item.GetItemUrl()">@item.DisplayName</a>
+                    @if (!item.GetItemUrl().EndsWith("index.aspx") && item.Children.Count > 0)
+                    {
+                        <ul>
+                            @foreach (Sitecore.Data.Items.Item subItem in item.Children)
+                            {
+                                <li><a href="@subItem.GetItemUrl()">@subItem.DisplayName</a></li>
+                            }
+                        </ul>
+                    }
+                </li>
+            }
+        </ul>
+        @if (Model.Address != null)
+        {
+            <div id="dot-info">
+                <p>
+                    <span id="local-address">
+                    </span>
+                </p>
+                <p>
+                    @Model.Address.CorporateName<br />
+                </p>
+                <div>
+                    <div itemprop="image" itemscope itemtype="http://schema.org/ImageObject" style="display:none">
+                        <img src="https://www.allmysons.com/Content/AMS/allmysons/images/banner-location.jpg" itemprop="url">
+                    </div>
+                    <span style="display:none" itemprop="priceRange">All My Sons Moving &amp; Storage</span>
+                    @if (!string.IsNullOrWhiteSpace(Model.Address.DBA.ToHtmlString()))
+                    {
+                        <p>DBA:</p>
+                        @Model.Address.DBA <br />
+                    }
+
+                    <div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+                        <span itemprop="streetAddress">@Model.Address.Street</span><br />
+                        @if (!string.IsNullOrWhiteSpace(Model.Address.Street2.ToHtmlString()))
+                        {
+                            @Model.Address.Street2<br />
+                        }
+                        City, State: <span itemprop="addressLocality">@Model.Address.City</span>,
+                        <span itemprop="addressRegion">@Model.Address.State</span><br />
+                        Zip: <span itemprop="postalCode">@Model.Address.Zip</span><br />
+                    </div>Tel: <span itemprop="telephone">@Model.Address.Tel</span>
+                    @if (!string.IsNullOrWhiteSpace(Model.Address.Fax.ToHtmlString()))
+                    {
+                    <br />
+                    Fax: <span itemprop="faxNumber">@Model.Address.Fax</span>
+                }
+                    @if (!string.IsNullOrWhiteSpace(Model.Address.AdditionalInfo.ToHtmlString()))
+                    {
+                        <br />
+                        @Model.Address.AdditionalInfo
+                    }
+                </div>
+                <p></p>
+            </div>
+        }
+    </div>
+</nav>
+@if (Sitecore.Context.Item.TemplateName.ToString() == AMS.Web.Core.TemplateNames.BRANCH_TEMPLATE_NAME)
+{
+    var weekdaycontent = "Monday-Thursday " + Sitecore.Context.Item.Fields["Start Time for WeekDay"].Value.ToString() + "AM -" + Sitecore.Context.Item.Fields["End Time for WeekDay"].Value.ToString() + "PM " + Sitecore.Context.Item.Fields["TimeZone"].Value.ToString();
+    var fridaycontent = "Friday " + Sitecore.Context.Item.Fields["Start Time for Friday"].Value.ToString() + "AM -" + Sitecore.Context.Item.Fields["End Time for Friday"].Value.ToString() + "PM " + Sitecore.Context.Item.Fields["TimeZone"].Value.ToString();
+    var saturdaycontent = "Saturday " + Sitecore.Context.Item.Fields["Start Time for Saturday"].Value.ToString() + "AM -" + Sitecore.Context.Item.Fields["End Time for Saturday"].Value.ToString() + "PM " + Sitecore.Context.Item.Fields["TimeZone"].Value.ToString();
+    var sundaycontent = "Sunday " + Sitecore.Context.Item.Fields["Start Time for Sunday"].Value.ToString() + "AM -" + Sitecore.Context.Item.Fields["End Time for Sunday"].Value.ToString() + "PM " + Sitecore.Context.Item.Fields["TimeZone"].Value.ToString();
+<div itemprop="OpeningHoursSpecification" itemscope itemtype="http://schema.org/OpeningHoursSpecification" style="display:none">
+
+    <meta itemprop="openingHours" content=@weekdaycontent />
+    <meta itemprop="openingHours" content=@fridaycontent />
+    <meta itemprop="openingHours" content=@saturdaycontent />
+    <meta itemprop="openingHours" content=@sundaycontent />
+</div>
+}
+

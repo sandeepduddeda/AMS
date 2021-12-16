@@ -1,0 +1,51 @@
+﻿@using Sitecore.Data.Items;
+
+@{
+    Sitecore.Data.Database database = Sitecore.Data.Database.GetDatabase("master");
+    var root = Sitecore.Context.Database.GetItem("{97941D22-AB97-4C6E-A6B9-B87EA59E102E}");
+    Sitecore.Data.Items.Item[] Branchitems = database.SelectItems("fast:/sitecore/content/AMS/allmysons/Home/*[@@templateid = '{B99305F7-6700-4499-8989-96E87BB32E7D}']");
+    Sitecore.Data.Items.Item[] Articleitems = database.SelectItems("fast:/sitecore/content/AMS/allmysons/Home/*[@@templateid = '{B69E693B-9B08-4348-9AB2-B91C82E73D76}']");
+    Sitecore.Data.Items.Item[] Cityitems = database.SelectItems("fast:/sitecore/content/AMS/allmysons/Home/*[@@templateid = '{EE5AE0D2-02CF-4815-A2E3-8E861D60793E}']");
+
+    <div class="container">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6" style="width:300px">
+            <h3>Our Locations</h3>
+            <ul>
+                @foreach (Item item in Branchitems)
+                {
+                    if (item != null)
+                    {
+                        @RecursiveSitemap(item)}
+                }
+            </ul>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6" style="width:300px">
+            <h3>CityPages</h3>
+            <ul>
+                @foreach (Item item in Cityitems)
+                {
+                    if (item != null)
+                    {
+                        @RecursiveSitemap(item)}
+                }
+            </ul>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6" style="width:300px">
+            <h3>Moving Articles</h3>
+            <ul>
+                @foreach (Item item in Articleitems)
+                {
+                    if (item != null)
+                    {
+                        @RecursiveSitemap(item)}
+                }
+            </ul>
+        </div>
+    </div>
+
+}
+
+@helper RecursiveSitemap(Item parentItem)
+{
+    @Html.Sitecore().ViewRendering("/Views/AMS/allmysons/Renderings/SiteMap/SitemapLink.cshtml", new { DataSource = parentItem.Paths.FullPath })
+}

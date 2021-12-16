@@ -1,0 +1,15 @@
+﻿@using Sitecore.Mvc.Presentation
+@using Sitecore.Mvc
+
+@model RenderingModel
+
+@{
+    var content = (Sitecore.Context.Item["Content"] ?? string.Empty).Replace("$customerId$", (string) (TempData["CustomerId"] ?? "N/A"));
+    var ppcConversionScript = TempData["PPCConversionScript"] as string;
+}
+
+<!-- Conversion script -->
+@Html.Raw(ppcConversionScript)
+<!-- Conversion script /-->
+
+@Html.Raw(content)

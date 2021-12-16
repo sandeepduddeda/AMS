@@ -1,0 +1,99 @@
+﻿@using AMS.Web.Extensions
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Mvc
+
+@model AMS.Web.Models.ReviewsListModel
+
+@{
+    var ctlId = "gridReviews" + Model.BranchName;
+}
+
+<style>
+    /* common reset */
+    .review .star-ratings {
+        margin:0;
+    }
+
+    @@media (min-width: 480px) and (max-width: 767px) {
+	    .wrapper-margin-compensator {
+		    margin-top: 90px;
+	    }
+    }
+
+    /* /common reset */
+
+
+    .grid-reviews-container {
+        background-color: #eee;
+        text-align: left;
+        padding: 20px 5px 0;
+    }
+    
+    .grid-reviews::after {
+        display: table;
+        content: " ";
+        clear:both;
+    }
+
+    .grid-reviews .grid-review-column {
+        width: 25%;
+        float: left;
+        margin: 0 0 10px;
+        padding: 0 5px;
+    }
+    
+    @@media (max-width: 1280px) {
+        .grid-reviews .grid-review-column { width: 33.333%; }
+    }
+       
+    @@media (max-width: 1024px) {
+        .grid-reviews .grid-review-column { width: 50%; }
+    }
+
+    @@media (max-width: 480px) {
+        .grid-reviews .grid-review-column { width: 100%; }
+    }
+
+    .grid-reviews .review {
+        background-color: #fff;
+        margin: 0;
+        padding: 10px;
+    }
+
+    .grid-reviews-loader {
+        margin: 0 auto;
+        text-align: center;
+        display: none;
+    }
+</style>
+
+<!--/ Grid Reviews -->
+@if (Model.Reviews != null && Model.Reviews.Count > 0)
+{
+    <div class="grid-reviews-container wrapper-margin-compensator">
+        @*<h3 class="text-center">What Our Customers Are Saying</h3>*@
+
+        <div id="@ctlId" data-url="/api/Sitecore/Content/GridReviews" data-branch="@Model.BranchName" data-page-size="@Model.PageSize" data-page-num="@Model.PageNum" class="reviews-list grid-reviews">
+
+            @for (var i = 0; i < Model.Reviews.Count; i++)
+            {
+                var review = Model.Reviews[i];
+                <div class="grid-review-column">
+                    <div class="review item" itemprop="review" itemscope itemtype="https://schema.org/Review">
+                        <div class="review-value" itemprop="reviewRating">@review.Rating.ToString("f1")</div>
+                        <div class="star-ratings">
+                            <div class="star-ratings-top" style="width: @(review.Rating * 20)%"></div>
+                            <div class="star-ratings-bottom"></div>
+                        </div>
+                        <div class="review-date" itemprop="datePublished" content="@review.ReviewDate.ToString("yyyy-MM-dd")">@review.ReviewDate.ToShortDateString()</div>
+                        <div class="review-title" itemprop="name">@review.ReviewTitle</div>
+                        <div class="review-author" itemprop="author">@review.CustomerName</div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="grid-reviews-loader">Loading...</div>
+    </div>
+}
+<!-- Grid Reviews /-->

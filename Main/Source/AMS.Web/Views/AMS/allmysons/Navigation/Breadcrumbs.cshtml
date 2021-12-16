@@ -1,0 +1,29 @@
+﻿@using AMS.Web.Extensions
+@model RenderingModel
+
+@{
+    var items = AMS.Web.Services.NavigationService.GetBreadcrumbs();
+}
+
+@if (items != null && items.Any())
+{
+    <ol class="breadcrumb">
+        @for (var i = 0; i < items.Count; i++)
+        {
+            if (i == items.Count - 1 && items[i].TemplateID == AMS.Web.Core.TemplateIds.BLOG_CATEGORY_PAGE)
+            {
+                var categoryPage = new AMS.Web.Services.BlogService().GetCategoryPage(Request);
+                <li><a href="@categoryPage.Value">@categoryPage.Key</a></li>
+            }
+            else if (i == items.Count - 1 && items[i].TemplateID == AMS.Web.Core.TemplateIds.BLOG_ARCHIVE_PAGE)
+            {
+                var arcchivePage = new AMS.Web.Services.BlogService().GetArchivePage(Request);
+                <li><a href="@arcchivePage.Value">@arcchivePage.Key</a></li>
+            }
+            else
+            {
+                <li><a href="@items[i].GetItemUrl()">@items[i].DisplayName</a></li>
+            }
+        }
+    </ol>
+}

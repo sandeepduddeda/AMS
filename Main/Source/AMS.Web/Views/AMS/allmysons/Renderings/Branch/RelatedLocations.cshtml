@@ -1,0 +1,31 @@
+﻿@using AMS.Web.Extensions
+@model AMS.Web.Models.LocationsModel
+
+@{
+    if (Model.Items.Any())
+    {
+        <!--/ Realted Locations -->
+        <div class="location-serve-areas clearfix">
+            <h4>We also serve the following areas</h4>
+
+            @{
+                const int columnCount = 4;
+
+                var maxItemsPerCoulumn = (Model.Items.Count + columnCount - 1) / columnCount;
+                var groups = Model.Items.GroupBy(i => Model.Items.IndexOf(i) / maxItemsPerCoulumn).ToList();
+
+                foreach (var g in groups)
+                {
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                        @foreach (var locationItem in g)
+                        {
+                            <h5><a href="@locationItem.GetItemUrl()">@locationItem.DisplayName</a></h5>
+                        }
+                    </div>
+                }
+            }
+
+        </div>
+        <!-- Realted Locations /-->
+    }
+}

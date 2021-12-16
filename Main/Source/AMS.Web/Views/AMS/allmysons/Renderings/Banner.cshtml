@@ -1,0 +1,38 @@
+﻿@using AMS.Web.Extensions
+@using Sitecore.Data.Items
+@using AMS.Web.Services
+
+@model AMS.Web.Models.BannerModel
+
+@if (Sitecore.Context.PageMode.IsPageEditorEditing || !string.IsNullOrEmpty(Model.ImageUrl))
+{
+    <!--/ Banner -->
+
+<div class="intro-parallax full-height banner-slider-item banner-inner-intro">
+    <div class="full-cover bg-image" data-stellar-ratio="0.6" data-stellar-vertical-offset="90" @Html.Raw(string.Format("style=\"background-image:url('{0}')\"", Model.ImageUrl)) title="@Model.ImageAlt"></div>
+    <div class="intro-caption" data-stellar-ratio="0.6">
+        <h2 class="wow fadeInUpBig" data-wow-duration="1.4s" data-wow-delay="0s">@Model.Title</h2>
+        <p class="wow fadeInUpBig" data-wow-duration="1.6s" data-wow-delay="0s">@Model.Subtitle</p>
+        <a class="wow fadeInUpBig hidden-xs" data-wow-duration="1.8s" data-wow-delay="0s" href="@Model.RequestAQuoteUrl">Click For Pricing</a>
+        <a class="wow fadeInUpBig visible-xs" data-wow-duration="1.8s" data-wow-delay="0s" href="@Model.RequestAQuoteUrl">Click For Pricing</a>
+    </div>
+    <div class="intro-content">
+        <a class="hasty-button hidden-xs cd-top" data-wow-duration="1.8s" data-wow-delay="0s" href="/ams_quote.aspx"></a>
+    </div>
+
+    @if (Sitecore.Context.Item.ID.ToString() == "{57C0BC25-3437-47CB-9EA9-FB6B607E07CC}")
+    {
+<div class="intro-content">
+    <a class="hasty-button hidden-xs cd-top" data-wow-duration="1.8s" data-wow-delay="0s" href="/mobile1/ams_quote.aspx"></a>
+</div>
+    }
+    @if (Sitecore.Context.Item.ID.ToString() == "{F12A5F09-EA3B-4DCB-8F20-5495E51C2E09}")
+    {
+<div class="intro-content">
+    <a class="hasty-button hidden-xs cd-top" data-wow-duration="1.8s" data-wow-delay="0s" href="/mobile2/ams_quote.aspx"></a>
+</div>
+    }
+</div>
+    
+    <!-- Banner /-->
+}

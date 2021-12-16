@@ -1,0 +1,22 @@
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Mvc
+@using Sitecore
+@using AMS.Web.Core
+
+@model RenderingModel
+@{
+    var termsAndConditions = Sitecore.Context.Database.GetItem(Items.TermsAndConditions);
+    var privacyPolicy = Sitecore.Context.Database.GetItem(Items.PrivacyPolicy);
+    var quoteForm = Sitecore.Context.Database.GetItem(ItemPaths.PATH_QUOTE_FORM_FOR_NewlandingPages);
+}
+
+@using (Html.BeginRouteForm(Sitecore.Mvc.Configuration.MvcSettings.SitecoreRouteName, FormMethod.Post, new { @id = "get-quotee" ,@action=""}))
+{
+    @Html.Sitecore().FormHandler("Content", "RequestQuoteForNewLandingPages")
+       if (TempData.ContainsKey("Error"))
+    {
+        <div class="error">@TempData["Error"]</div>
+    }
+
+    @Html.Raw(Html.Sitecore().Field(FieldNames.FIELD_NAME_CONTENT, quoteForm))    
+}

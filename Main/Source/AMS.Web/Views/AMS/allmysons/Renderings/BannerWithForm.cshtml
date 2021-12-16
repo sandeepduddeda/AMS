@@ -1,0 +1,19 @@
+﻿@using AMS.Web.Extensions
+@using Sitecore.Data.Items
+@using AMS.Web.Services
+
+@model AMS.Web.Models.BannerModel
+
+@if (Sitecore.Context.PageMode.IsPageEditorEditing || !string.IsNullOrEmpty(Model.ImageUrl))
+{
+    <!--/ Banner -->
+
+    <div class="intro-parallax full-height banner-slider-item banner-inner-intro">
+        <div class="full-cover bg-image" data-stellar-ratio="0.6" data-stellar-vertical-offset="90" @Html.Raw(string.Format("style=\"background-image:url('{0}')\"", Model.ImageUrl)) title="@Model.ImageAlt"></div>
+        <div class="intro-content">
+            @Html.Partial("~/Views/AMS/allmysons/Renderings/Pricing/RequestQuoteForm.cshtml", new RenderingModel())
+        </div>
+    </div>
+    
+    <!-- Banner /-->
+}

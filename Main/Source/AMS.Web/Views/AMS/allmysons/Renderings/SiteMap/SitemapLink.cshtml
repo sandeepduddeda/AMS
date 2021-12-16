@@ -1,0 +1,46 @@
+﻿@using Sitecore.Data.Items;
+@using Sitecore.Diagnostics;
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+
+@if (Model != null)
+{
+    try
+    {
+        if (Model.Item.HasChildren)
+        {
+            var ItemUrl = @Sitecore.Links.LinkManager.GetItemUrl(Model.Item).ToString().Contains("index.aspx") ? @Sitecore.Links.LinkManager.GetItemUrl(Model.Item) : @Sitecore.Links.LinkManager.GetItemUrl(Model.Item).ToString().Replace(".aspx", "/index.aspx");
+            <li><a href="@ItemUrl">@Model.Item.Name</a></li>
+            <ul>
+                @{
+                    Sitecore.Collections.ChildList childList = Model.Item.Children;
+                    foreach (Item child in childList)
+                    {
+                        //not allowing child article pages
+                        if (child.TemplateID.ToString() != "{B69E693B-9B08-4348-9AB2-B91C82E73D76}")
+                        {
+                            if (child.Fields[Sitecore.FieldIDs.LayoutField] != null && !String.IsNullOrEmpty(child.Fields[Sitecore.FieldIDs.LayoutField].Value))
+                            {
+                                var childurl = @Sitecore.Links.LinkManager.GetItemUrl(child).ToString().Contains("index.aspx") ? @Sitecore.Links.LinkManager.GetItemUrl(child) : @Sitecore.Links.LinkManager.GetItemUrl(child).ToString().Replace(".aspx", "/index.aspx");
+                                <li><a href="@childurl">@child.Name</a></li>
+                            }
+                            if (child.Children.Count != 0)
+                            {
+                                @Html.Sitecore().ViewRendering("/Views/AMS/allmysons/Renderings/SiteMap/SitemapLink.cshtml", new { DataSource = child.Paths.FullPath })
+                            }
+                        }
+                    }
+                }
+            </ul>
+        }
+        else
+        {
+            var ItemUrl1 = @Sitecore.Links.LinkManager.GetItemUrl(Model.Item).ToString().Contains("index.aspx") ? @Sitecore.Links.LinkManager.GetItemUrl(Model.Item) : @Sitecore.Links.LinkManager.GetItemUrl(Model.Item).ToString().Replace(".aspx", "/index.aspx");
+            <li><a href="@ItemUrl1">@Model.Item.Name</a></li>
+        }
+    }
+    catch (Exception ex)
+    {
+        Log.Error("Sitemap exception ", ex, this);
+    }
+}

@@ -1,0 +1,54 @@
+﻿@using AMS.Web.Core
+@model RenderingModel
+@{
+    var pageTitle = !string.IsNullOrWhiteSpace(Html.Sitecore().CurrentItem["Meta Title"])
+        ? Html.Sitecore().CurrentItem["Meta Title"]
+        : Html.Sitecore().CurrentItem.DisplayName;
+
+    if (Html.Sitecore().CurrentItem.TemplateID == TemplateIds.BLOG_ARCHIVE_PAGE)
+    {
+        var arcchivePage = new AMS.Web.Services.BlogService().GetArchivePage(Request);
+        if (!string.IsNullOrWhiteSpace(arcchivePage.Key))
+        {
+            pageTitle = arcchivePage.Key;
+        }
+    }
+    if (Html.Sitecore().CurrentItem.TemplateID == TemplateIds.BLOG_CATEGORY_PAGE)
+    {
+        var categoryPage = new AMS.Web.Services.BlogService().GetCategoryPage(Request);
+        if (!string.IsNullOrWhiteSpace(categoryPage.Key))
+        {
+            pageTitle = categoryPage.Key;
+        }
+    }
+    <title>@pageTitle</title>
+
+    var description = Html.Sitecore().CurrentItem["Meta Description"];
+    if (!string.IsNullOrEmpty(description))
+    {
+        <meta name="description" content="@description">
+    }
+
+    var keywords = Html.Sitecore().CurrentItem["Meta Keywords"];
+    if (!string.IsNullOrEmpty(keywords))
+    {
+        <meta name="keywords" content="@keywords">
+    }
+
+    var canonicalUrl = Html.Sitecore().CurrentItem["Canonical URL"];
+    if (!string.IsNullOrEmpty(canonicalUrl))
+    {
+        <link rel="canonical" href="@canonicalUrl" />
+    }
+
+    var publisherTag = Html.Sitecore().CurrentItem["Google Publisher Tag"];
+    if (!string.IsNullOrEmpty(publisherTag))
+    {
+        <a href="@publisherTag" rel="publisher"></a>
+    }
+
+    if ("1" == Html.Sitecore().CurrentItem["No Index"])
+    {
+        <meta name="robots" content="noindex" />
+    }
+}

@@ -1,0 +1,16 @@
+﻿@using AMS.Web.Extensions
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Mvc
+@using AMS.Web.Core
+
+@model AMS.Web.Models.ReviewsListModel
+
+<!--/ Reviews -->
+    <section class="why">
+        <div class="container">
+            <h3>Why All My Sons Moving & Storage?</h3>
+            @Html.Raw(Html.Sitecore().Field(FieldNames.REVIWES_FOR_NEWLANDINGPAGE, Sitecore.Context.Item))
+        </div>
+    </section>
+
+<!-- Reviews /-->

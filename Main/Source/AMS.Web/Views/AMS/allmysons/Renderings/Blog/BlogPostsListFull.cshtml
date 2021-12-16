@@ -1,0 +1,38 @@
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Mvc
+@using AMS.Web.Extensions
+
+@model AMS.Web.Models.BlogList
+
+@if (Model != null && Model.Blogs != null)
+{
+    var blogs = Model.Blogs.ToList().Skip(Model.GetPage() * Model.ItemsPerPage).Take(Model.ItemsPerPage);
+    
+    <div class="blogs">
+        @foreach (var blog in blogs)
+        {
+            <div class="blog">
+                <div class="blog-title"><a href="@blog.Url">@blog.Title</a></div>
+
+                <div>
+                    @Html.Raw(blog.Content.StripHTML().Truncate(300, ""))
+                    <a href="@blog.Url">[…]</a>
+                </div>
+
+                <ul class="blog-category">
+                    @if (blog.Categories != null)
+                    {
+                        foreach (var category in blog.Categories)
+                        {
+                            <li><a href="@category.Url">@category.Title</a></li>
+                        }
+                    }
+                </ul>
+
+                <div class="blog-date">@blog.PostDate.ToString("MMMM dd, yyyy")</div>
+            </div>
+        }
+    </div>
+    
+    @Html.Partial("~/Views/AMS/allmysons/Renderings/Blog/BlogPaging.cshtml", Model)
+}

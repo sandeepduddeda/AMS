@@ -1,0 +1,43 @@
+﻿@using AMS.Web.Core
+@using AMS.Web.Extensions
+@using Sitecore.Data.Fields
+@model RenderingModel
+
+@{
+    var dataSourceId = RenderingContext.CurrentOrNull.Rendering.DataSource;
+    var item = dataSourceId != null ? Sitecore.Context.Database.GetItem(dataSourceId) : Model.PageItem.Parent;
+    var articles = item.Children.Where(i => i.TemplateName != TemplateNames.BRANCH_TEMPLATE_NAME && i.TemplateName != TemplateNames.CITY_TEMPLATE_NAME && i.TemplateName != TemplateNames.MOVING_ARTICLES_TEMPLATE_NAME);
+
+}
+
+<div class="col-xs-12">
+    @if (articles.Any())
+    {
+    <ul class="articles">
+        @foreach (var article in articles)
+        {
+
+
+            var imgField = ((ImageField)article.Fields["Article Image"]);
+            if (imgField != null && imgField.MediaItem != null)
+            {
+                <li class="col-md-4" style="min-height: 320px;">
+                    <a href="@article.GetItemUrl()" target="_blank">
+                        <img src=@imgField.MediaItem.GetMediaUrl() alt=@imgField.Alt><br>
+                        <span>@Html.Sitecore().Field("Title", article)</span>
+                    </a>
+                </li>
+            }
+            else
+            {
+                <li class="col-md-4"><a href="@article.GetItemUrl()" target="_blank">@Html.Sitecore().Field("Title", article)</a></li>
+            }
+
+        }
+    </ul>
+    }
+    else if (Sitecore.Context.PageMode.IsPageEditorEditing)
+    {
+        <p>There is no articles to show.</p>
+    }
+</div>

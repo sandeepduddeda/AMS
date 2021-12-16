@@ -1,0 +1,2470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetCommonClasses">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCommonClassesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCommonClassesResult" type="tns:CommonClasses" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CommonClasses" />
+      <s:element name="GetBranchIDFromZip">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OriginZip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBranchIDFromZipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetBranchIDFromZipResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCustomerCoupon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CouponID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCustomerCouponResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAggregatorQualifiedLeads">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAggregatorQualifiedLeadsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAggregatorQualifiedLeadsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGraebelQualifiedLeads">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetGraebelQualifiedLeadsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGraebelQualifiedLeadsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAPILeadImportInfoBySource">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIClientSource" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAPILeadImportInfoBySourceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAPILeadImportInfoBySourceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadSitecore">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveSize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Src" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="APIReferenceID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="DestinationZip" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanWeText" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadSitecoreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportLeadSitecoreResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertCustomerIPAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertCustomerIPAddressResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ImportLead03">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveSize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Src" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DestinationZip" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="APIReferenceID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanWeText" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientIPAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLead03Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportLead03Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLead01">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveSize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Src" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DestinationZip" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="APIReferenceID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanWeText" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLead01Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportLead01Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadKenshoo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KPID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreateLead" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveSize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Src" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DestinationZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GCLID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MSCLICKID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CouponID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MovingDateNotSure" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ZipCodeNotSure" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsAutodialer" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadKenshooResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportLeadKenshooResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLead05">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveSize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Src" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DestinationZip" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="APIReferenceID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanWeText" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLead05Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportLead05Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLead05GCLID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveSize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Src" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DestinationZip" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="APIReferenceID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanWeText" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GCLID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLead05GCLIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportLead05GCLIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadMovingful">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveSize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Src" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DestinationZip" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="APIReferenceID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanWeText" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MovingDateNotSure" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ZipCodeNotSure" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsAutodialer" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Referral" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadMovingfulResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportLeadMovingfulResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadPMP02">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveSize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Src" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DestinationZip" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="APIReferenceID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanWeText" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MovingDateNotSure" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ZipCodeNotSure" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsAutodialer" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadPMP02Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportLeadPMP02Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadPMP02GCLID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveSize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Src" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DestinationZip" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="APIReferenceID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanWeText" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MovingDateNotSure" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ZipCodeNotSure" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsAutodialer" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="GCLID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadPMP02GCLIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportLeadPMP02GCLIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadPMPCoupon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveSize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Src" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DestinationZip" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="APIReferenceID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanWeText" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MovingDateNotSure" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ZipCodeNotSure" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsAutodialer" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="CouponID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadPMPCouponResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportLeadPMPCouponResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadPMPCouponGCLID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveSize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Src" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DestinationZip" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="APIReferenceID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanWeText" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MovingDateNotSure" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ZipCodeNotSure" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsAutodialer" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="CouponID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="GCLID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadPMPCouponGCLIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportLeadPMPCouponGCLIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadPMP01">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveSize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Src" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DestinationZip" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="APIReferenceID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanWeText" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MovingDateNotSure" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ZipCodeNotSure" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadPMP01Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportLeadPMP01Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadPorch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveSize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DestinationAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DestinationCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DestinationZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Src" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HomeBuyerOrRenter" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadPorchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportLeadPorchResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadUnbounce">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveSize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Src" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadUnbounceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportLeadUnbounceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadUnbounceWithDest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveSize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Src" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DestinationZip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadUnbounceWithDestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportLeadUnbounceWithDestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLead06">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveSize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Src" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DestinationZip" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="APIReferenceID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanWeText" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientIPAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoveType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PromoCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLead06Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportLead06Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommonClasses" nillable="true" type="tns:CommonClasses" />
+      <s:element name="int" type="s:int" />
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetCommonClassesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCommonClasses" />
+  </wsdl:message>
+  <wsdl:message name="GetCommonClassesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCommonClassesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchIDFromZipSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBranchIDFromZip" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchIDFromZipSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBranchIDFromZipResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerCouponSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerCoupon" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerCouponSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerCouponResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAggregatorQualifiedLeadsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAggregatorQualifiedLeads" />
+  </wsdl:message>
+  <wsdl:message name="GetAggregatorQualifiedLeadsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAggregatorQualifiedLeadsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGraebelQualifiedLeadsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGraebelQualifiedLeads" />
+  </wsdl:message>
+  <wsdl:message name="GetGraebelQualifiedLeadsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGraebelQualifiedLeadsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAPILeadImportInfoBySourceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAPILeadImportInfoBySource" />
+  </wsdl:message>
+  <wsdl:message name="GetAPILeadImportInfoBySourceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAPILeadImportInfoBySourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadSitecoreSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportLeadSitecore" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadSitecoreSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportLeadSitecoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertCustomerIPAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertCustomerIPAddress" />
+  </wsdl:message>
+  <wsdl:message name="InsertCustomerIPAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertCustomerIPAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead03SoapIn">
+    <wsdl:part name="parameters" element="tns:ImportLead03" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead03SoapOut">
+    <wsdl:part name="parameters" element="tns:ImportLead03Response" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead01SoapIn">
+    <wsdl:part name="parameters" element="tns:ImportLead01" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead01SoapOut">
+    <wsdl:part name="parameters" element="tns:ImportLead01Response" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadKenshooSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportLeadKenshoo" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadKenshooSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportLeadKenshooResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead05SoapIn">
+    <wsdl:part name="parameters" element="tns:ImportLead05" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead05SoapOut">
+    <wsdl:part name="parameters" element="tns:ImportLead05Response" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead05GCLIDSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportLead05GCLID" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead05GCLIDSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportLead05GCLIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadMovingfulSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportLeadMovingful" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadMovingfulSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportLeadMovingfulResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMP02SoapIn">
+    <wsdl:part name="parameters" element="tns:ImportLeadPMP02" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMP02SoapOut">
+    <wsdl:part name="parameters" element="tns:ImportLeadPMP02Response" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMP02GCLIDSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportLeadPMP02GCLID" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMP02GCLIDSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportLeadPMP02GCLIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMPCouponSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportLeadPMPCoupon" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMPCouponSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportLeadPMPCouponResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMPCouponGCLIDSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportLeadPMPCouponGCLID" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMPCouponGCLIDSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportLeadPMPCouponGCLIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMP01SoapIn">
+    <wsdl:part name="parameters" element="tns:ImportLeadPMP01" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMP01SoapOut">
+    <wsdl:part name="parameters" element="tns:ImportLeadPMP01Response" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPorchSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportLeadPorch" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPorchSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportLeadPorchResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadUnbounceSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportLeadUnbounce" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadUnbounceSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportLeadUnbounceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadUnbounceWithDestSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportLeadUnbounceWithDest" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadUnbounceWithDestSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportLeadUnbounceWithDestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead06SoapIn">
+    <wsdl:part name="parameters" element="tns:ImportLead06" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead06SoapOut">
+    <wsdl:part name="parameters" element="tns:ImportLead06Response" />
+  </wsdl:message>
+  <wsdl:message name="GetCommonClassesHttpGetIn" />
+  <wsdl:message name="GetCommonClassesHttpGetOut">
+    <wsdl:part name="Body" element="tns:CommonClasses" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchIDFromZipHttpGetIn">
+    <wsdl:part name="OriginZip" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchIDFromZipHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerCouponHttpGetIn">
+    <wsdl:part name="CustomerID" type="s:string" />
+    <wsdl:part name="CouponID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerCouponHttpGetOut" />
+  <wsdl:message name="GetAggregatorQualifiedLeadsHttpGetIn" />
+  <wsdl:message name="GetAggregatorQualifiedLeadsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetGraebelQualifiedLeadsHttpGetIn" />
+  <wsdl:message name="GetGraebelQualifiedLeadsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetAPILeadImportInfoBySourceHttpGetIn">
+    <wsdl:part name="APIClientSource" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAPILeadImportInfoBySourceHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadSitecoreHttpGetIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="MoveType" type="s:string" />
+    <wsdl:part name="APIReferenceID" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="CanWeText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadSitecoreHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertCustomerIPAddressHttpGetIn">
+    <wsdl:part name="CustomerID" type="s:string" />
+    <wsdl:part name="IPAddress" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertCustomerIPAddressHttpGetOut" />
+  <wsdl:message name="ImportLead03HttpGetIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="APIReferenceID" type="s:string" />
+    <wsdl:part name="CanWeText" type="s:string" />
+    <wsdl:part name="ClientIPAddress" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead03HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead01HttpGetIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="APIReferenceID" type="s:string" />
+    <wsdl:part name="CanWeText" type="s:string" />
+    <wsdl:part name="Comments" type="s:string" />
+    <wsdl:part name="Address" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead01HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadKenshooHttpGetIn">
+    <wsdl:part name="KPID" type="s:string" />
+    <wsdl:part name="CreateLead" type="s:string" />
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="MoveType" type="s:string" />
+    <wsdl:part name="GCLID" type="s:string" />
+    <wsdl:part name="MSCLICKID" type="s:string" />
+    <wsdl:part name="CouponID" type="s:string" />
+    <wsdl:part name="MovingDateNotSure" type="s:string" />
+    <wsdl:part name="ZipCodeNotSure" type="s:string" />
+    <wsdl:part name="IsAutodialer" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadKenshooHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead05HttpGetIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="APIReferenceID" type="s:string" />
+    <wsdl:part name="CanWeText" type="s:string" />
+    <wsdl:part name="MoveType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead05HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead05GCLIDHttpGetIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="APIReferenceID" type="s:string" />
+    <wsdl:part name="CanWeText" type="s:string" />
+    <wsdl:part name="MoveType" type="s:string" />
+    <wsdl:part name="GCLID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead05GCLIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadMovingfulHttpGetIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="APIReferenceID" type="s:string" />
+    <wsdl:part name="CanWeText" type="s:string" />
+    <wsdl:part name="MoveType" type="s:string" />
+    <wsdl:part name="MovingDateNotSure" type="s:string" />
+    <wsdl:part name="ZipCodeNotSure" type="s:string" />
+    <wsdl:part name="IsAutodialer" type="s:string" />
+    <wsdl:part name="Referral" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadMovingfulHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMP02HttpGetIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="APIReferenceID" type="s:string" />
+    <wsdl:part name="CanWeText" type="s:string" />
+    <wsdl:part name="MoveType" type="s:string" />
+    <wsdl:part name="MovingDateNotSure" type="s:string" />
+    <wsdl:part name="ZipCodeNotSure" type="s:string" />
+    <wsdl:part name="IsAutodialer" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMP02HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMP02GCLIDHttpGetIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="APIReferenceID" type="s:string" />
+    <wsdl:part name="CanWeText" type="s:string" />
+    <wsdl:part name="MoveType" type="s:string" />
+    <wsdl:part name="MovingDateNotSure" type="s:string" />
+    <wsdl:part name="ZipCodeNotSure" type="s:string" />
+    <wsdl:part name="IsAutodialer" type="s:string" />
+    <wsdl:part name="GCLID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMP02GCLIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMPCouponHttpGetIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="APIReferenceID" type="s:string" />
+    <wsdl:part name="CanWeText" type="s:string" />
+    <wsdl:part name="MoveType" type="s:string" />
+    <wsdl:part name="MovingDateNotSure" type="s:string" />
+    <wsdl:part name="ZipCodeNotSure" type="s:string" />
+    <wsdl:part name="IsAutodialer" type="s:string" />
+    <wsdl:part name="CouponID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMPCouponHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMPCouponGCLIDHttpGetIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="APIReferenceID" type="s:string" />
+    <wsdl:part name="CanWeText" type="s:string" />
+    <wsdl:part name="MoveType" type="s:string" />
+    <wsdl:part name="MovingDateNotSure" type="s:string" />
+    <wsdl:part name="ZipCodeNotSure" type="s:string" />
+    <wsdl:part name="IsAutodialer" type="s:string" />
+    <wsdl:part name="CouponID" type="s:string" />
+    <wsdl:part name="GCLID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMPCouponGCLIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMP01HttpGetIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="APIReferenceID" type="s:string" />
+    <wsdl:part name="CanWeText" type="s:string" />
+    <wsdl:part name="MoveType" type="s:string" />
+    <wsdl:part name="MovingDateNotSure" type="s:string" />
+    <wsdl:part name="ZipCodeNotSure" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMP01HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPorchHttpGetIn">
+    <wsdl:part name="FullName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginAddress" type="s:string" />
+    <wsdl:part name="OriginCity" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="DestinationAddress" type="s:string" />
+    <wsdl:part name="DestinationCity" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="HomeBuyerOrRenter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPorchHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadUnbounceHttpGetIn">
+    <wsdl:part name="FullName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadUnbounceHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadUnbounceWithDestHttpGetIn">
+    <wsdl:part name="FullName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadUnbounceWithDestHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead06HttpGetIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="APIReferenceID" type="s:string" />
+    <wsdl:part name="CanWeText" type="s:string" />
+    <wsdl:part name="ClientIPAddress" type="s:string" />
+    <wsdl:part name="MoveType" type="s:string" />
+    <wsdl:part name="PromoCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead06HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCommonClassesHttpPostIn" />
+  <wsdl:message name="GetCommonClassesHttpPostOut">
+    <wsdl:part name="Body" element="tns:CommonClasses" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchIDFromZipHttpPostIn">
+    <wsdl:part name="OriginZip" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchIDFromZipHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerCouponHttpPostIn">
+    <wsdl:part name="CustomerID" type="s:string" />
+    <wsdl:part name="CouponID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerCouponHttpPostOut" />
+  <wsdl:message name="GetAggregatorQualifiedLeadsHttpPostIn" />
+  <wsdl:message name="GetAggregatorQualifiedLeadsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetGraebelQualifiedLeadsHttpPostIn" />
+  <wsdl:message name="GetGraebelQualifiedLeadsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetAPILeadImportInfoBySourceHttpPostIn">
+    <wsdl:part name="APIClientSource" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAPILeadImportInfoBySourceHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadSitecoreHttpPostIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="MoveType" type="s:string" />
+    <wsdl:part name="APIReferenceID" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="CanWeText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadSitecoreHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertCustomerIPAddressHttpPostIn">
+    <wsdl:part name="CustomerID" type="s:string" />
+    <wsdl:part name="IPAddress" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertCustomerIPAddressHttpPostOut" />
+  <wsdl:message name="ImportLead03HttpPostIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="APIReferenceID" type="s:string" />
+    <wsdl:part name="CanWeText" type="s:string" />
+    <wsdl:part name="ClientIPAddress" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead03HttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead01HttpPostIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="APIReferenceID" type="s:string" />
+    <wsdl:part name="CanWeText" type="s:string" />
+    <wsdl:part name="Comments" type="s:string" />
+    <wsdl:part name="Address" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead01HttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadKenshooHttpPostIn">
+    <wsdl:part name="KPID" type="s:string" />
+    <wsdl:part name="CreateLead" type="s:string" />
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="MoveType" type="s:string" />
+    <wsdl:part name="GCLID" type="s:string" />
+    <wsdl:part name="MSCLICKID" type="s:string" />
+    <wsdl:part name="CouponID" type="s:string" />
+    <wsdl:part name="MovingDateNotSure" type="s:string" />
+    <wsdl:part name="ZipCodeNotSure" type="s:string" />
+    <wsdl:part name="IsAutodialer" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadKenshooHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead05HttpPostIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="APIReferenceID" type="s:string" />
+    <wsdl:part name="CanWeText" type="s:string" />
+    <wsdl:part name="MoveType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead05HttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead05GCLIDHttpPostIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="APIReferenceID" type="s:string" />
+    <wsdl:part name="CanWeText" type="s:string" />
+    <wsdl:part name="MoveType" type="s:string" />
+    <wsdl:part name="GCLID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead05GCLIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadMovingfulHttpPostIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="APIReferenceID" type="s:string" />
+    <wsdl:part name="CanWeText" type="s:string" />
+    <wsdl:part name="MoveType" type="s:string" />
+    <wsdl:part name="MovingDateNotSure" type="s:string" />
+    <wsdl:part name="ZipCodeNotSure" type="s:string" />
+    <wsdl:part name="IsAutodialer" type="s:string" />
+    <wsdl:part name="Referral" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadMovingfulHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMP02HttpPostIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="APIReferenceID" type="s:string" />
+    <wsdl:part name="CanWeText" type="s:string" />
+    <wsdl:part name="MoveType" type="s:string" />
+    <wsdl:part name="MovingDateNotSure" type="s:string" />
+    <wsdl:part name="ZipCodeNotSure" type="s:string" />
+    <wsdl:part name="IsAutodialer" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMP02HttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMP02GCLIDHttpPostIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="APIReferenceID" type="s:string" />
+    <wsdl:part name="CanWeText" type="s:string" />
+    <wsdl:part name="MoveType" type="s:string" />
+    <wsdl:part name="MovingDateNotSure" type="s:string" />
+    <wsdl:part name="ZipCodeNotSure" type="s:string" />
+    <wsdl:part name="IsAutodialer" type="s:string" />
+    <wsdl:part name="GCLID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMP02GCLIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMPCouponHttpPostIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="APIReferenceID" type="s:string" />
+    <wsdl:part name="CanWeText" type="s:string" />
+    <wsdl:part name="MoveType" type="s:string" />
+    <wsdl:part name="MovingDateNotSure" type="s:string" />
+    <wsdl:part name="ZipCodeNotSure" type="s:string" />
+    <wsdl:part name="IsAutodialer" type="s:string" />
+    <wsdl:part name="CouponID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMPCouponHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMPCouponGCLIDHttpPostIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="APIReferenceID" type="s:string" />
+    <wsdl:part name="CanWeText" type="s:string" />
+    <wsdl:part name="MoveType" type="s:string" />
+    <wsdl:part name="MovingDateNotSure" type="s:string" />
+    <wsdl:part name="ZipCodeNotSure" type="s:string" />
+    <wsdl:part name="IsAutodialer" type="s:string" />
+    <wsdl:part name="CouponID" type="s:string" />
+    <wsdl:part name="GCLID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMPCouponGCLIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMP01HttpPostIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="APIReferenceID" type="s:string" />
+    <wsdl:part name="CanWeText" type="s:string" />
+    <wsdl:part name="MoveType" type="s:string" />
+    <wsdl:part name="MovingDateNotSure" type="s:string" />
+    <wsdl:part name="ZipCodeNotSure" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPMP01HttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPorchHttpPostIn">
+    <wsdl:part name="FullName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginAddress" type="s:string" />
+    <wsdl:part name="OriginCity" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="DestinationAddress" type="s:string" />
+    <wsdl:part name="DestinationCity" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="HomeBuyerOrRenter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadPorchHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadUnbounceHttpPostIn">
+    <wsdl:part name="FullName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadUnbounceHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadUnbounceWithDestHttpPostIn">
+    <wsdl:part name="FullName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadUnbounceWithDestHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead06HttpPostIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="MoveDate" type="s:string" />
+    <wsdl:part name="MoveSize" type="s:string" />
+    <wsdl:part name="OriginZip" type="s:string" />
+    <wsdl:part name="Src" type="s:string" />
+    <wsdl:part name="DestinationZip" type="s:string" />
+    <wsdl:part name="APIReferenceID" type="s:string" />
+    <wsdl:part name="CanWeText" type="s:string" />
+    <wsdl:part name="ClientIPAddress" type="s:string" />
+    <wsdl:part name="MoveType" type="s:string" />
+    <wsdl:part name="PromoCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportLead06HttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="AMSLeadImportSoap">
+    <wsdl:operation name="GetCommonClasses">
+      <wsdl:input message="tns:GetCommonClassesSoapIn" />
+      <wsdl:output message="tns:GetCommonClassesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchIDFromZip">
+      <wsdl:input message="tns:GetBranchIDFromZipSoapIn" />
+      <wsdl:output message="tns:GetBranchIDFromZipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerCoupon">
+      <wsdl:input message="tns:UpdateCustomerCouponSoapIn" />
+      <wsdl:output message="tns:UpdateCustomerCouponSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAggregatorQualifiedLeads">
+      <wsdl:input message="tns:GetAggregatorQualifiedLeadsSoapIn" />
+      <wsdl:output message="tns:GetAggregatorQualifiedLeadsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGraebelQualifiedLeads">
+      <wsdl:input message="tns:GetGraebelQualifiedLeadsSoapIn" />
+      <wsdl:output message="tns:GetGraebelQualifiedLeadsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAPILeadImportInfoBySource">
+      <wsdl:input message="tns:GetAPILeadImportInfoBySourceSoapIn" />
+      <wsdl:output message="tns:GetAPILeadImportInfoBySourceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadSitecore">
+      <wsdl:input message="tns:ImportLeadSitecoreSoapIn" />
+      <wsdl:output message="tns:ImportLeadSitecoreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCustomerIPAddress">
+      <wsdl:input message="tns:InsertCustomerIPAddressSoapIn" />
+      <wsdl:output message="tns:InsertCustomerIPAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead03">
+      <wsdl:input message="tns:ImportLead03SoapIn" />
+      <wsdl:output message="tns:ImportLead03SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead01">
+      <wsdl:input message="tns:ImportLead01SoapIn" />
+      <wsdl:output message="tns:ImportLead01SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadKenshoo">
+      <wsdl:input message="tns:ImportLeadKenshooSoapIn" />
+      <wsdl:output message="tns:ImportLeadKenshooSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead05">
+      <wsdl:input message="tns:ImportLead05SoapIn" />
+      <wsdl:output message="tns:ImportLead05SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead05GCLID">
+      <wsdl:input message="tns:ImportLead05GCLIDSoapIn" />
+      <wsdl:output message="tns:ImportLead05GCLIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadMovingful">
+      <wsdl:input message="tns:ImportLeadMovingfulSoapIn" />
+      <wsdl:output message="tns:ImportLeadMovingfulSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMP02">
+      <wsdl:input message="tns:ImportLeadPMP02SoapIn" />
+      <wsdl:output message="tns:ImportLeadPMP02SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMP02GCLID">
+      <wsdl:input message="tns:ImportLeadPMP02GCLIDSoapIn" />
+      <wsdl:output message="tns:ImportLeadPMP02GCLIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMPCoupon">
+      <wsdl:input message="tns:ImportLeadPMPCouponSoapIn" />
+      <wsdl:output message="tns:ImportLeadPMPCouponSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMPCouponGCLID">
+      <wsdl:input message="tns:ImportLeadPMPCouponGCLIDSoapIn" />
+      <wsdl:output message="tns:ImportLeadPMPCouponGCLIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMP01">
+      <wsdl:input message="tns:ImportLeadPMP01SoapIn" />
+      <wsdl:output message="tns:ImportLeadPMP01SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPorch">
+      <wsdl:input message="tns:ImportLeadPorchSoapIn" />
+      <wsdl:output message="tns:ImportLeadPorchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadUnbounce">
+      <wsdl:input message="tns:ImportLeadUnbounceSoapIn" />
+      <wsdl:output message="tns:ImportLeadUnbounceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadUnbounceWithDest">
+      <wsdl:input message="tns:ImportLeadUnbounceWithDestSoapIn" />
+      <wsdl:output message="tns:ImportLeadUnbounceWithDestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead06">
+      <wsdl:input message="tns:ImportLead06SoapIn" />
+      <wsdl:output message="tns:ImportLead06SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AMSLeadImportHttpGet">
+    <wsdl:operation name="GetCommonClasses">
+      <wsdl:input message="tns:GetCommonClassesHttpGetIn" />
+      <wsdl:output message="tns:GetCommonClassesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchIDFromZip">
+      <wsdl:input message="tns:GetBranchIDFromZipHttpGetIn" />
+      <wsdl:output message="tns:GetBranchIDFromZipHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerCoupon">
+      <wsdl:input message="tns:UpdateCustomerCouponHttpGetIn" />
+      <wsdl:output message="tns:UpdateCustomerCouponHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAggregatorQualifiedLeads">
+      <wsdl:input message="tns:GetAggregatorQualifiedLeadsHttpGetIn" />
+      <wsdl:output message="tns:GetAggregatorQualifiedLeadsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGraebelQualifiedLeads">
+      <wsdl:input message="tns:GetGraebelQualifiedLeadsHttpGetIn" />
+      <wsdl:output message="tns:GetGraebelQualifiedLeadsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAPILeadImportInfoBySource">
+      <wsdl:input message="tns:GetAPILeadImportInfoBySourceHttpGetIn" />
+      <wsdl:output message="tns:GetAPILeadImportInfoBySourceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadSitecore">
+      <wsdl:input message="tns:ImportLeadSitecoreHttpGetIn" />
+      <wsdl:output message="tns:ImportLeadSitecoreHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCustomerIPAddress">
+      <wsdl:input message="tns:InsertCustomerIPAddressHttpGetIn" />
+      <wsdl:output message="tns:InsertCustomerIPAddressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead03">
+      <wsdl:input message="tns:ImportLead03HttpGetIn" />
+      <wsdl:output message="tns:ImportLead03HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead01">
+      <wsdl:input message="tns:ImportLead01HttpGetIn" />
+      <wsdl:output message="tns:ImportLead01HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadKenshoo">
+      <wsdl:input message="tns:ImportLeadKenshooHttpGetIn" />
+      <wsdl:output message="tns:ImportLeadKenshooHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead05">
+      <wsdl:input message="tns:ImportLead05HttpGetIn" />
+      <wsdl:output message="tns:ImportLead05HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead05GCLID">
+      <wsdl:input message="tns:ImportLead05GCLIDHttpGetIn" />
+      <wsdl:output message="tns:ImportLead05GCLIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadMovingful">
+      <wsdl:input message="tns:ImportLeadMovingfulHttpGetIn" />
+      <wsdl:output message="tns:ImportLeadMovingfulHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMP02">
+      <wsdl:input message="tns:ImportLeadPMP02HttpGetIn" />
+      <wsdl:output message="tns:ImportLeadPMP02HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMP02GCLID">
+      <wsdl:input message="tns:ImportLeadPMP02GCLIDHttpGetIn" />
+      <wsdl:output message="tns:ImportLeadPMP02GCLIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMPCoupon">
+      <wsdl:input message="tns:ImportLeadPMPCouponHttpGetIn" />
+      <wsdl:output message="tns:ImportLeadPMPCouponHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMPCouponGCLID">
+      <wsdl:input message="tns:ImportLeadPMPCouponGCLIDHttpGetIn" />
+      <wsdl:output message="tns:ImportLeadPMPCouponGCLIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMP01">
+      <wsdl:input message="tns:ImportLeadPMP01HttpGetIn" />
+      <wsdl:output message="tns:ImportLeadPMP01HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPorch">
+      <wsdl:input message="tns:ImportLeadPorchHttpGetIn" />
+      <wsdl:output message="tns:ImportLeadPorchHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadUnbounce">
+      <wsdl:input message="tns:ImportLeadUnbounceHttpGetIn" />
+      <wsdl:output message="tns:ImportLeadUnbounceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadUnbounceWithDest">
+      <wsdl:input message="tns:ImportLeadUnbounceWithDestHttpGetIn" />
+      <wsdl:output message="tns:ImportLeadUnbounceWithDestHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead06">
+      <wsdl:input message="tns:ImportLead06HttpGetIn" />
+      <wsdl:output message="tns:ImportLead06HttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AMSLeadImportHttpPost">
+    <wsdl:operation name="GetCommonClasses">
+      <wsdl:input message="tns:GetCommonClassesHttpPostIn" />
+      <wsdl:output message="tns:GetCommonClassesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchIDFromZip">
+      <wsdl:input message="tns:GetBranchIDFromZipHttpPostIn" />
+      <wsdl:output message="tns:GetBranchIDFromZipHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerCoupon">
+      <wsdl:input message="tns:UpdateCustomerCouponHttpPostIn" />
+      <wsdl:output message="tns:UpdateCustomerCouponHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAggregatorQualifiedLeads">
+      <wsdl:input message="tns:GetAggregatorQualifiedLeadsHttpPostIn" />
+      <wsdl:output message="tns:GetAggregatorQualifiedLeadsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGraebelQualifiedLeads">
+      <wsdl:input message="tns:GetGraebelQualifiedLeadsHttpPostIn" />
+      <wsdl:output message="tns:GetGraebelQualifiedLeadsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAPILeadImportInfoBySource">
+      <wsdl:input message="tns:GetAPILeadImportInfoBySourceHttpPostIn" />
+      <wsdl:output message="tns:GetAPILeadImportInfoBySourceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadSitecore">
+      <wsdl:input message="tns:ImportLeadSitecoreHttpPostIn" />
+      <wsdl:output message="tns:ImportLeadSitecoreHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCustomerIPAddress">
+      <wsdl:input message="tns:InsertCustomerIPAddressHttpPostIn" />
+      <wsdl:output message="tns:InsertCustomerIPAddressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead03">
+      <wsdl:input message="tns:ImportLead03HttpPostIn" />
+      <wsdl:output message="tns:ImportLead03HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead01">
+      <wsdl:input message="tns:ImportLead01HttpPostIn" />
+      <wsdl:output message="tns:ImportLead01HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadKenshoo">
+      <wsdl:input message="tns:ImportLeadKenshooHttpPostIn" />
+      <wsdl:output message="tns:ImportLeadKenshooHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead05">
+      <wsdl:input message="tns:ImportLead05HttpPostIn" />
+      <wsdl:output message="tns:ImportLead05HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead05GCLID">
+      <wsdl:input message="tns:ImportLead05GCLIDHttpPostIn" />
+      <wsdl:output message="tns:ImportLead05GCLIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadMovingful">
+      <wsdl:input message="tns:ImportLeadMovingfulHttpPostIn" />
+      <wsdl:output message="tns:ImportLeadMovingfulHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMP02">
+      <wsdl:input message="tns:ImportLeadPMP02HttpPostIn" />
+      <wsdl:output message="tns:ImportLeadPMP02HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMP02GCLID">
+      <wsdl:input message="tns:ImportLeadPMP02GCLIDHttpPostIn" />
+      <wsdl:output message="tns:ImportLeadPMP02GCLIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMPCoupon">
+      <wsdl:input message="tns:ImportLeadPMPCouponHttpPostIn" />
+      <wsdl:output message="tns:ImportLeadPMPCouponHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMPCouponGCLID">
+      <wsdl:input message="tns:ImportLeadPMPCouponGCLIDHttpPostIn" />
+      <wsdl:output message="tns:ImportLeadPMPCouponGCLIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMP01">
+      <wsdl:input message="tns:ImportLeadPMP01HttpPostIn" />
+      <wsdl:output message="tns:ImportLeadPMP01HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPorch">
+      <wsdl:input message="tns:ImportLeadPorchHttpPostIn" />
+      <wsdl:output message="tns:ImportLeadPorchHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadUnbounce">
+      <wsdl:input message="tns:ImportLeadUnbounceHttpPostIn" />
+      <wsdl:output message="tns:ImportLeadUnbounceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadUnbounceWithDest">
+      <wsdl:input message="tns:ImportLeadUnbounceWithDestHttpPostIn" />
+      <wsdl:output message="tns:ImportLeadUnbounceWithDestHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead06">
+      <wsdl:input message="tns:ImportLead06HttpPostIn" />
+      <wsdl:output message="tns:ImportLead06HttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AMSLeadImportSoap" type="tns:AMSLeadImportSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCommonClasses">
+      <soap:operation soapAction="http://tempuri.org/GetCommonClasses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchIDFromZip">
+      <soap:operation soapAction="http://tempuri.org/GetBranchIDFromZip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerCoupon">
+      <soap:operation soapAction="http://tempuri.org/UpdateCustomerCoupon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAggregatorQualifiedLeads">
+      <soap:operation soapAction="http://tempuri.org/GetAggregatorQualifiedLeads" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGraebelQualifiedLeads">
+      <soap:operation soapAction="http://tempuri.org/GetGraebelQualifiedLeads" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAPILeadImportInfoBySource">
+      <soap:operation soapAction="http://tempuri.org/GetAPILeadImportInfoBySource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadSitecore">
+      <soap:operation soapAction="http://tempuri.org/ImportLeadSitecore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCustomerIPAddress">
+      <soap:operation soapAction="http://tempuri.org/InsertCustomerIPAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead03">
+      <soap:operation soapAction="http://tempuri.org/ImportLead03" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead01">
+      <soap:operation soapAction="http://tempuri.org/ImportLead01" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadKenshoo">
+      <soap:operation soapAction="http://tempuri.org/ImportLeadKenshoo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead05">
+      <soap:operation soapAction="http://tempuri.org/ImportLead05" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead05GCLID">
+      <soap:operation soapAction="http://tempuri.org/ImportLead05GCLID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadMovingful">
+      <soap:operation soapAction="http://tempuri.org/ImportLeadMovingful" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMP02">
+      <soap:operation soapAction="http://tempuri.org/ImportLeadPMP02" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMP02GCLID">
+      <soap:operation soapAction="http://tempuri.org/ImportLeadPMP02GCLID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMPCoupon">
+      <soap:operation soapAction="http://tempuri.org/ImportLeadPMPCoupon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMPCouponGCLID">
+      <soap:operation soapAction="http://tempuri.org/ImportLeadPMPCouponGCLID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMP01">
+      <soap:operation soapAction="http://tempuri.org/ImportLeadPMP01" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPorch">
+      <soap:operation soapAction="http://tempuri.org/ImportLeadPorch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadUnbounce">
+      <soap:operation soapAction="http://tempuri.org/ImportLeadUnbounce" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadUnbounceWithDest">
+      <soap:operation soapAction="http://tempuri.org/ImportLeadUnbounceWithDest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead06">
+      <soap:operation soapAction="http://tempuri.org/ImportLead06" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AMSLeadImportSoap12" type="tns:AMSLeadImportSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCommonClasses">
+      <soap12:operation soapAction="http://tempuri.org/GetCommonClasses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchIDFromZip">
+      <soap12:operation soapAction="http://tempuri.org/GetBranchIDFromZip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerCoupon">
+      <soap12:operation soapAction="http://tempuri.org/UpdateCustomerCoupon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAggregatorQualifiedLeads">
+      <soap12:operation soapAction="http://tempuri.org/GetAggregatorQualifiedLeads" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGraebelQualifiedLeads">
+      <soap12:operation soapAction="http://tempuri.org/GetGraebelQualifiedLeads" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAPILeadImportInfoBySource">
+      <soap12:operation soapAction="http://tempuri.org/GetAPILeadImportInfoBySource" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadSitecore">
+      <soap12:operation soapAction="http://tempuri.org/ImportLeadSitecore" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCustomerIPAddress">
+      <soap12:operation soapAction="http://tempuri.org/InsertCustomerIPAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead03">
+      <soap12:operation soapAction="http://tempuri.org/ImportLead03" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead01">
+      <soap12:operation soapAction="http://tempuri.org/ImportLead01" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadKenshoo">
+      <soap12:operation soapAction="http://tempuri.org/ImportLeadKenshoo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead05">
+      <soap12:operation soapAction="http://tempuri.org/ImportLead05" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead05GCLID">
+      <soap12:operation soapAction="http://tempuri.org/ImportLead05GCLID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadMovingful">
+      <soap12:operation soapAction="http://tempuri.org/ImportLeadMovingful" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMP02">
+      <soap12:operation soapAction="http://tempuri.org/ImportLeadPMP02" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMP02GCLID">
+      <soap12:operation soapAction="http://tempuri.org/ImportLeadPMP02GCLID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMPCoupon">
+      <soap12:operation soapAction="http://tempuri.org/ImportLeadPMPCoupon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMPCouponGCLID">
+      <soap12:operation soapAction="http://tempuri.org/ImportLeadPMPCouponGCLID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMP01">
+      <soap12:operation soapAction="http://tempuri.org/ImportLeadPMP01" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPorch">
+      <soap12:operation soapAction="http://tempuri.org/ImportLeadPorch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadUnbounce">
+      <soap12:operation soapAction="http://tempuri.org/ImportLeadUnbounce" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadUnbounceWithDest">
+      <soap12:operation soapAction="http://tempuri.org/ImportLeadUnbounceWithDest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead06">
+      <soap12:operation soapAction="http://tempuri.org/ImportLead06" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AMSLeadImportHttpGet" type="tns:AMSLeadImportHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetCommonClasses">
+      <http:operation location="/GetCommonClasses" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchIDFromZip">
+      <http:operation location="/GetBranchIDFromZip" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerCoupon">
+      <http:operation location="/UpdateCustomerCoupon" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetAggregatorQualifiedLeads">
+      <http:operation location="/GetAggregatorQualifiedLeads" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGraebelQualifiedLeads">
+      <http:operation location="/GetGraebelQualifiedLeads" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAPILeadImportInfoBySource">
+      <http:operation location="/GetAPILeadImportInfoBySource" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadSitecore">
+      <http:operation location="/ImportLeadSitecore" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCustomerIPAddress">
+      <http:operation location="/InsertCustomerIPAddress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead03">
+      <http:operation location="/ImportLead03" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead01">
+      <http:operation location="/ImportLead01" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadKenshoo">
+      <http:operation location="/ImportLeadKenshoo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead05">
+      <http:operation location="/ImportLead05" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead05GCLID">
+      <http:operation location="/ImportLead05GCLID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadMovingful">
+      <http:operation location="/ImportLeadMovingful" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMP02">
+      <http:operation location="/ImportLeadPMP02" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMP02GCLID">
+      <http:operation location="/ImportLeadPMP02GCLID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMPCoupon">
+      <http:operation location="/ImportLeadPMPCoupon" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMPCouponGCLID">
+      <http:operation location="/ImportLeadPMPCouponGCLID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMP01">
+      <http:operation location="/ImportLeadPMP01" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPorch">
+      <http:operation location="/ImportLeadPorch" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadUnbounce">
+      <http:operation location="/ImportLeadUnbounce" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadUnbounceWithDest">
+      <http:operation location="/ImportLeadUnbounceWithDest" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead06">
+      <http:operation location="/ImportLead06" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AMSLeadImportHttpPost" type="tns:AMSLeadImportHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetCommonClasses">
+      <http:operation location="/GetCommonClasses" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchIDFromZip">
+      <http:operation location="/GetBranchIDFromZip" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerCoupon">
+      <http:operation location="/UpdateCustomerCoupon" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetAggregatorQualifiedLeads">
+      <http:operation location="/GetAggregatorQualifiedLeads" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGraebelQualifiedLeads">
+      <http:operation location="/GetGraebelQualifiedLeads" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAPILeadImportInfoBySource">
+      <http:operation location="/GetAPILeadImportInfoBySource" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadSitecore">
+      <http:operation location="/ImportLeadSitecore" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCustomerIPAddress">
+      <http:operation location="/InsertCustomerIPAddress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead03">
+      <http:operation location="/ImportLead03" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead01">
+      <http:operation location="/ImportLead01" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadKenshoo">
+      <http:operation location="/ImportLeadKenshoo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead05">
+      <http:operation location="/ImportLead05" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead05GCLID">
+      <http:operation location="/ImportLead05GCLID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadMovingful">
+      <http:operation location="/ImportLeadMovingful" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMP02">
+      <http:operation location="/ImportLeadPMP02" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMP02GCLID">
+      <http:operation location="/ImportLeadPMP02GCLID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMPCoupon">
+      <http:operation location="/ImportLeadPMPCoupon" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMPCouponGCLID">
+      <http:operation location="/ImportLeadPMPCouponGCLID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPMP01">
+      <http:operation location="/ImportLeadPMP01" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadPorch">
+      <http:operation location="/ImportLeadPorch" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadUnbounce">
+      <http:operation location="/ImportLeadUnbounce" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadUnbounceWithDest">
+      <http:operation location="/ImportLeadUnbounceWithDest" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLead06">
+      <http:operation location="/ImportLead06" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AMSLeadImport">
+    <wsdl:port name="AMSLeadImportSoap" binding="tns:AMSLeadImportSoap">
+      <soap:address location="https://apistaging.allmysons.com/AMSLeadImport.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AMSLeadImportSoap12" binding="tns:AMSLeadImportSoap12">
+      <soap12:address location="https://apistaging.allmysons.com/AMSLeadImport.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AMSLeadImportHttpGet" binding="tns:AMSLeadImportHttpGet">
+      <http:address location="https://apistaging.allmysons.com/AMSLeadImport.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AMSLeadImportHttpPost" binding="tns:AMSLeadImportHttpPost">
+      <http:address location="https://apistaging.allmysons.com/AMSLeadImport.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

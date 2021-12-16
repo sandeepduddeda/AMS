@@ -1,0 +1,44 @@
+﻿@model AMS.Web.Models.HeaderModel
+
+<header class="clearfix" @(Sitecore.Context.PageMode.IsPreview || Sitecore.Context.PageMode.IsPageEditorEditing ? "style=position:relative;z-index:3" : null)>
+    <div class="menu-icon pull-left">
+        <a><i class="fa fa-navicon"></i></a>
+    </div>
+    <div class="header-right">
+        <a href="tel:@Model.Phone" class="fa fa-phone">&nbsp;</a>
+        <p itemprop="telephone" class="phone">@Model.Phone</p>
+    </div>
+    <div class="brand-main">
+        <meta itemprop="name" content="@Model.Title" />
+        <meta itemprop="image" content="https://www.allmysons.com/Content/AMS/allmysons/images/logo-brand.png" />
+        <meta itemprop="url" content="@Sitecore.Context.Item.Fields["Canonical URL"].Value.ToString()" />
+        @if (Sitecore.Context.Item.ID.ToString() == "{31B7B060-98EE-4950-B975-F89824390D72}")
+        {
+            <a href="https://www.allmysons.com/quote_now.aspx" title="@Model.Title">&nbsp;</a>
+        }
+        else
+        {
+        <a href="https://www.allmysons.com/" title="@Model.Title">&nbsp;</a>
+        }
+    </div>
+    @if (Model.RatingValue >= 4f)
+    {
+        <div class="national-rating">
+            <span>@Model.RatingText</span>
+            <span class="national-rating_value">@Model.RatingValue.ToString("f1")</span>
+            <div class="star-ratings">
+                <div class="star-ratings-top" style="width: @(Model.RatingValue*20)%"></div>
+                <div class="star-ratings-bottom"></div>
+            </div>
+            <div class="aggregate-rating" style="display:none">
+                <div itemprop="name">All My Sons</div>
+                <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                    <meta itemprop="itemReviewed" content="All My Sons" />
+                    <span itemprop="reviewCount">@Model.RatingCount</span>
+                    <span itemprop="ratingValue">@Model.RatingValue.ToString("f1")</span>
+                </div>
+            </div>
+        </div>
+    }
+
+</header>

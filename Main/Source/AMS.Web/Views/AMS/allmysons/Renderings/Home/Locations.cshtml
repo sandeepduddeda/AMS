@@ -1,0 +1,33 @@
+﻿@using AMS.Web.Extensions
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Mvc
+
+@model AMS.Web.Models.LocationsModel
+
+<!--/ Locations -->
+<div class="location-areas-index clearfix">
+    <div class="container">
+        <h5>All My Sons Moving &amp; Storage Locations</h5>
+
+                @{
+                    const int columnCount = 5;
+                    var maxItemsPerCoulumn = (Model.Items.Count + columnCount - 1) / columnCount;
+                    var groups = Model.Items.GroupBy(i => Model.Items.IndexOf(i) / maxItemsPerCoulumn).ToList();
+
+                    foreach (var g in groups)
+                    {
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                            @foreach (var locationItem in g)
+                            {
+                                <p><a href="@locationItem.GetItemUrl()">@locationItem.DisplayName</a></p>
+                            }
+                            </div>
+                    }
+                }
+
+                <span class="clear"></span>
+                <a class="location-areas-index-more clearfix">Tap to Show/Hide</a>
+
+            </div>
+</div>
+<!-- Locations /-->

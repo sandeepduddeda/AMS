@@ -1,0 +1,60 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Analytics.Extensions
+@{
+    Layout = null;
+}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="google-site-verification" content="9j5nB4Vk8rusrHuJPXyDNf0_EsXJoGkdroGMgFCzys4" />
+    @Html.Sitecore().Controller("SEO", "PageTags")
+    @Html.Sitecore().Controller("SEO", "VisitorTracking")
+    @Styles.Render("~/Content/AMS/allmysons/css/styles")
+    @Html.Sitecore().Placeholder("head")
+    @Html.Sitecore().VisitorIdentification()
+</head>
+
+<body itemscope itemtype="http://schema.org/LocalBusiness">
+    @Html.Sitecore().Placeholder("gtmCode")
+    <!--/ Preloader -->
+    <div id="preloader">
+        <div class="preloader-container">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader /-->
+
+    <div class="body-overlay">&nbsp;</div>
+
+    <div class="wrapper" @(Sitecore.Context.PageMode.IsPreview || Sitecore.Context.PageMode.IsPageEditorEditing ? "style=margin-top:0" : null)>
+
+        <!--/ Nav -->
+        @Html.Sitecore().Controller("Navigation", "Menu")
+        <!-- Nav /-->
+        <!--/ Header -->
+        @Html.Sitecore().Controller("Navigation", "Header")
+        <!-- Header /-->
+
+        @Html.Sitecore().Placeholder("main")
+
+        <!--/ Footer -->
+        @Html.Sitecore().Controller("Navigation", "Footer")
+        <!-- Footer /-->
+
+        <a class="back-to-top cd-top"><i class="fa fa-angle-up"></i></a>
+
+    </div>
+
+    @Scripts.Render("~/Content/AMS/allmysons/js/cdnjquery", "~/Content/AMS/allmysons/js/cdnbootstrap", "~/Content/AMS/allmysons/js/scripts")
+
+    @Html.Sitecore().Placeholder("scripts")
+</body>
+</html>

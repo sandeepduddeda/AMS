@@ -1,0 +1,12 @@
+﻿@using AMS.Web.Extensions
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Mvc
+@using AMS.Web.Core
+
+@model AMS.Web.Models.LocationsModel
+
+<!--Partner Logos -->
+<section class="logos">
+    @Html.Raw(Html.Sitecore().Field(FieldNames.PARTNERLOGOS_FOR_NEWLANDINGPAGE, Sitecore.Context.Item))
+</section>
+<!--Partner Logos /-->

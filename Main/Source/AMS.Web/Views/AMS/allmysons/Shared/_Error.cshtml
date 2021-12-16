@@ -1,0 +1,9 @@
+﻿@model AMS.Web.Core.SitecoreErrorData
+
+@if (Model != null && !string.IsNullOrEmpty(Model.Message))
+{
+    <div class="alert alert-danger" role="alert">
+        <p>@Model.Message</p>
+        <p>Please search <strong>@Model.ID</strong> in the logs for details</p>
+    </div>
+}

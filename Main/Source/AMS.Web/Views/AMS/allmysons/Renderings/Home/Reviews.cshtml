@@ -1,0 +1,48 @@
+﻿@using AMS.Web.Extensions
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Mvc
+@using AMS.Web.Core
+
+@model AMS.Web.Models.ReviewsListModel
+
+@{
+    var ctlId = "carousel" + Model.BranchName;
+    var carouselBlock = Sitecore.Context.Database.GetItem(ItemPaths.PATH_CAROUSEL_BLOCK);
+}
+
+<!--/ Reviews -->
+@if (Model.Reviews != null && Model.Reviews.Count > 3)
+{
+    <div class="reviews-container">
+        <h3 class="text-center">What Our Customers Are Saying</h3>
+
+        <div class="reviews-info-container clearfix">
+            <div id="@ctlId" data-url="/api/Sitecore/Home/Reviews" data-branch="@Model.BranchName" data-page-size="@Model.PageSize" class="reviews-list reviews-carousel">
+
+                @for (var i = 0; i < Model.Reviews.Count; i++)
+                {
+                    var review = Model.Reviews[i];
+
+                    <div class="review item" itemprop="review" itemscope itemtype="https://schema.org/Review">
+                        <div class="review-value" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                            <span itemprop="ratingValue">@review.Rating.ToString("f1")</span>/
+                        </div>
+                        <div class="star-ratings">
+                            <div class="star-ratings-top" style="width: @(review.Rating * 20)%"></div>
+                            <div class="star-ratings-bottom"></div>
+                        </div>
+                        <div class="review-date" itemprop="datePublished" content="@review.ReviewDate.ToString("yyyy-MM-dd")">@review.ReviewDate.ToShortDateString()</div>
+                        <meta itemprop="name" content="All My Sons" />
+                        <span class="review-title" itemprop="reviewBody">@review.ReviewTitle</span>
+                        <div class="review-author" itemprop="author">@review.CustomerName</div>
+                        <div itemprop="itemReviewed" content="All My Sons"></div>
+                    </div>
+
+                }
+            </div>
+
+            @Html.Sitecore().Field(FieldNames.FIELD_NAME_CONTENT, carouselBlock)
+        </div>
+    </div>
+}
+<!-- Reviews /-->

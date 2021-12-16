@@ -1,0 +1,78 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Web
+@using AMS.Web.Core
+@using AMS.Web.Services
+@using Sitecore.Mvc.Analytics.Extensions
+@{
+    Layout = null;
+}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    @Html.Sitecore().Controller("SEO", "PageTags")
+    @Html.Sitecore().Controller("SEO", "VisitorTracking")
+
+    @Styles.Render("~/Content/AMS/allmysons/css/styles")
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    @Html.Sitecore().Placeholder("head")
+    @Html.Sitecore().VisitorIdentification()
+</head>
+
+<body>
+
+    <!--/ Preloader -->
+    <div id="preloader">
+        <div class="preloader-container">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader /-->
+
+    <div class="body-overlay">&nbsp;</div>
+    @{
+        var content = new ContentService().GetPPCContent();
+        var queryString = ContentService.GetPPCQueryString();
+    }
+    <div class="wrapper" @(Sitecore.Context.PageMode.IsPreview || Sitecore.Context.PageMode.IsPageEditorEditing ? "style=margin-top:0" : null)>
+        <header class="header-inner-ppc clearfix" @(Sitecore.Context.PageMode.IsPageEditor ? "style=position:initial" : null)>
+            <div class="container">
+                <div class="brand-main"><a href="/">&nbsp;</a></div>
+                <div class="header-right">
+                    <a href="tel:@content.PhoneRaw" class="fa fa-phone">&nbsp;</a>
+                    <h1 class="phone">@content.Phone</h1>
+                    <p class="ppc-links">We Provide <a href="/same_day_next_day_moves.aspx@(queryString)">Same Day</a>, <a href="/quick_quote.aspx@(queryString)">Quick Quotes</a>, <a href="/local_moves.aspx@(queryString)">Local</a> and <a href="/out_of_state_moves.aspx@(queryString)">Out of State</a> Moves</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="ppc-content">
+            @Html.Sitecore().Placeholder("Main")
+        </div>
+
+        <footer>
+            <div class="footer-copyrighs">
+                @content.Footer
+                @content.Copyright
+            </div>
+        </footer>
+        <a class="back-to-top cd-top"><i class="fa fa-angle-up"></i></a>
+    </div>
+
+    @Scripts.Render("~/Content/AMS/allmysons/js/cdnjquery", "~/Content/AMS/allmysons/js/cdnbootstrap", "~/Content/AMS/allmysons/js/scripts")
+
+    @Html.Sitecore().Placeholder("scripts")
+
+</body>
+</html>
